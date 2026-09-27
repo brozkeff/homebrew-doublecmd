@@ -1,0 +1,14 @@
+Original tooling is licensed under EUPL-1.2; see LICENSE.
+
+The cask is derived from Homebrew/homebrew-cask revision
+ef0757f8d941d65fca367e6f135c56bad820b1ae, Casks/d/double-commander.rb.
+The unmodified historical cask is retained in test/fixtures/official-double-commander.rb.
+Homebrew material remains subject to its BSD-2-Clause notices, reproduced in
+test/fixtures/HOMEBREW-LICENSE. This repository's license does not replace them.
+
+test/fixtures/v1.2.8.json records public GitHub API metadata for
+https://github.com/doublecmd/doublecmd/releases/tag/v1.2.8.
+
+Double Commander itself is separate upstream software under GNU GPL version 2:
+https://github.com/doublecmd/doublecmd/blob/master/LICENSE.md
+Binaries are downloaded directly from upstream, not redistributed by this repository.

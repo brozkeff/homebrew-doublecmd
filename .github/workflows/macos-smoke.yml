@@ -1,0 +1,48 @@
+name: macOS smoke
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-15, macos-15-intel]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 15
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install historical release, reinstall, and upgrade
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          brew update --quiet
+          ruby scripts/releases.rb render --tag v1.2.8 --output tmp/v1.2.8
+          ruby scripts/verify_historical.rb
+          tap="$(brew --repository)/Library/Taps/brozkeff/homebrew-doublecmd"
+          mkdir -p "$tap/Casks"
+          cp tmp/v1.2.8/Casks/double-commander.rb "$tap/Casks/"
+          git -C "$tap" init
+          brew trust --cask brozkeff/doublecmd/double-commander
+          appdir="$RUNNER_TEMP/Apps"
+          mkdir -p "$appdir" "$HOME/.config/doublecmd"
+          printf 'preserve me\n' > "$HOME/.config/doublecmd/tap-smoke-marker"
+          brew install --cask --appdir="$appdir" brozkeff/doublecmd/double-commander
+          app="$appdir/Double Commander.app"
+          test -d "$app"
+          test -z "$(xattr -lr "$app")"
+          brew reinstall --cask --appdir="$appdir" brozkeff/doublecmd/double-commander
+          test -z "$(xattr -lr "$app")"
+          cp Casks/double-commander.rb "$tap/Casks/"
+          brew upgrade --cask --appdir="$appdir" brozkeff/doublecmd/double-commander
+          test -z "$(xattr -lr "$app")"
+          test "$(cat "$HOME/.config/doublecmd/tap-smoke-marker")" = 'preserve me'
+          lipo -verify_arch "$(uname -m)" "$app/Contents/MacOS/doublecmd"
+          brew list --cask --versions brozkeff/doublecmd/double-commander
+      - name: Audit cask without Gatekeeper checks
+        # Explicit immutable URLs look "unversioned" to the audit's interpolation heuristic.
+        run: brew audit --cask --skip-style --except=sha256_no_check_if_unversioned brozkeff/doublecmd/double-commander

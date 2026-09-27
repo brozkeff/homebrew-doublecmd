@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Double Commander for macOS</title><style>body{font:18px system-ui;max-width:850px;margin:3rem auto;padding:0 1rem;line-height:1.6}pre{overflow:auto;background:#eee;padding:1rem}code{overflow-wrap:anywhere}li{margin-bottom:1rem}</style></head><body>
+<h1>Double Commander for macOS</h1><p>Unofficial Homebrew tap. Tracked release: <a href="https://github.com/doublecmd/doublecmd/releases/tag/v1.2.9">1.2.9</a>. macOS 11 or newer.</p>
+<pre>brew tap brozkeff/doublecmd
+brew trust --cask brozkeff/doublecmd/double-commander
+brew install --cask brozkeff/doublecmd/double-commander
+# Later:
+brew update
+brew upgrade --cask brozkeff/doublecmd/double-commander</pre>
+<h2>Direct upstream downloads</h2><ul><li><a href="https://github.com/doublecmd/doublecmd/releases/download/v1.2.9/doublecmd-1.2.9.cocoa.aarch64.dmg">Apple Silicon</a><br>SHA-256: <code>6d615ae9d87fe60fed4efbb32fa83b5c21f2bfc007836f3f12e60e599d3447e8</code></li>
+<li><a href="https://github.com/doublecmd/doublecmd/releases/download/v1.2.9/doublecmd-1.2.9.cocoa.x86_64.dmg">Intel x86_64</a><br>SHA-256: <code>5a60a5efa31b4438512aabf0213c2c307dd910b3a6661f70da4dfbcfa6730578</code></li></ul>
+<p>The tap clears all extended attributes after each installation or upgrade. For manual installations, before first launch run:</p><pre>xattr -cr "/Applications/Double Commander.app/"</pre>
+<h2>Why this tap exists</h2><p>The official cask was disabled for failing Gatekeeper checks. This tap offers an explicit sideloading path and checks SHA-256 hashes, without notarization or PGP signature verification.</p>
+<p>Hashes verify downloaded bytes, not publisher identity. A compromised upstream account or build can publish malicious software with valid hashes. Clearing quarantine reduces macOS download protection. Weekly checks publish tap updates; they do not automatically upgrade your installed app.</p>
+<p><a href="https://doublecmd.sourceforge.io/">Upstream website</a> · <a href="https://github.com/doublecmd/doublecmd">Upstream GitHub</a> · <a href="https://github.com/Homebrew/homebrew-cask/blob/ef0757f8d941d65fca367e6f135c56bad820b1ae/Casks/d/double-commander.rb">Legacy official cask</a> · <a href="https://github.com/brozkeff/homebrew-doublecmd">Documentation and source</a></p>
+<p>Original tooling: EUPL-1.2. Double Commander: upstream GPLv2. Inherited Homebrew material retains BSD-2-Clause notices.</p>
+</body></html>

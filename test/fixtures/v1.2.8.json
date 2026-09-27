@@ -1,0 +1,162 @@
+{
+  "html_url": "https://github.com/doublecmd/doublecmd/releases/tag/v1.2.8",
+  "tag_name": "v1.2.8",
+  "draft": false,
+  "prerelease": false,
+  "published_at": "2026-08-09T09:13:15Z",
+  "assets": [
+    {
+      "id": 507329457,
+      "name": "doublecmd-1.2.8-src.tar.gz",
+      "state": "uploaded",
+      "size": 10066887,
+      "digest": "sha256:117a1b361e223475fd7b8e18a732c5ecbc92668ed6660d4a9137270ff9dff05b",
+      "updated_at": "2026-08-09T09:12:02Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8-src.tar.gz"
+    },
+    {
+      "id": 507347590,
+      "name": "doublecmd-1.2.8.cocoa.aarch64.dmg",
+      "state": "uploaded",
+      "size": 16568518,
+      "digest": "sha256:7432cf00b9d111730b26ca69d546d40408ca1b8e7ac31253fbc68780799120f0",
+      "updated_at": "2026-08-09T09:30:29Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.cocoa.aarch64.dmg"
+    },
+    {
+      "id": 507347554,
+      "name": "doublecmd-1.2.8.cocoa.x86_64.dmg",
+      "state": "uploaded",
+      "size": 17362470,
+      "digest": "sha256:2cb6d149fa9b4c993ee6b9323224c26b90181f1bf9c2277049678ee08be3c88d",
+      "updated_at": "2026-08-09T09:30:26Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.cocoa.x86_64.dmg"
+    },
+    {
+      "id": 507329705,
+      "name": "doublecmd-1.2.8.gtk2.aarch64.tar.xz",
+      "state": "uploaded",
+      "size": 9001656,
+      "digest": "sha256:fe5bc0e6887dc4e501cbd03962749555c8a5f3a30ce680744e6c7ebbf584da3f",
+      "updated_at": "2026-08-09T09:12:05Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.gtk2.aarch64.tar.xz"
+    },
+    {
+      "id": 507329781,
+      "name": "doublecmd-1.2.8.gtk2.i386.tar.xz",
+      "state": "uploaded",
+      "size": 9271828,
+      "digest": "sha256:307406b1bd9df39e63934a557136ca9257224ce93ba2e4a485a895197788dc12",
+      "updated_at": "2026-08-09T09:12:07Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.gtk2.i386.tar.xz"
+    },
+    {
+      "id": 507329828,
+      "name": "doublecmd-1.2.8.gtk2.x86_64.tar.xz",
+      "state": "uploaded",
+      "size": 9530780,
+      "digest": "sha256:69e73a41d27917b5d1532d0ae39ce0d272d64ca4761fae048dd930119a0a14b8",
+      "updated_at": "2026-08-09T09:12:09Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.gtk2.x86_64.tar.xz"
+    },
+    {
+      "id": 507329878,
+      "name": "doublecmd-1.2.8.i386-win32.exe",
+      "state": "uploaded",
+      "size": 10049802,
+      "digest": "sha256:32a17a763cb8959bf5b33066bea51d24063c9b4c3bea127a7a8909c7bb472ff3",
+      "updated_at": "2026-08-09T09:12:11Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.i386-win32.exe"
+    },
+    {
+      "id": 507329917,
+      "name": "doublecmd-1.2.8.i386-win32.msi",
+      "state": "uploaded",
+      "size": 16249576,
+      "digest": "sha256:99c09f7ad3bdad0a5ddde45d71940a98c0fec56c9b058a70a9a590f49e6e764f",
+      "updated_at": "2026-08-09T09:12:13Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.i386-win32.msi"
+    },
+    {
+      "id": 507329961,
+      "name": "doublecmd-1.2.8.i386-win32.zip",
+      "state": "uploaded",
+      "size": 15632149,
+      "digest": "sha256:42de9ea03212aebafbc22625b5e8bf8f1ba0808ff798646e8816270b2ae55755",
+      "updated_at": "2026-08-09T09:12:17Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.i386-win32.zip"
+    },
+    {
+      "id": 507330170,
+      "name": "doublecmd-1.2.8.qt.aarch64.tar.xz",
+      "state": "uploaded",
+      "size": 9340920,
+      "digest": "sha256:3f7a42ebddaa6b43917d16bd2269359f9a249f0774e443d236570879050b6621",
+      "updated_at": "2026-08-09T09:12:25Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.qt.aarch64.tar.xz"
+    },
+    {
+      "id": 507330232,
+      "name": "doublecmd-1.2.8.qt.i386.tar.xz",
+      "state": "uploaded",
+      "size": 9689328,
+      "digest": "sha256:b55f4a5a078d6febbd32b09f642b4bc4aa1d32cb4bb9ec3ebcbf109ea5fcf627",
+      "updated_at": "2026-08-09T09:12:28Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.qt.i386.tar.xz"
+    },
+    {
+      "id": 507330304,
+      "name": "doublecmd-1.2.8.qt.x86_64.tar.xz",
+      "state": "uploaded",
+      "size": 9904944,
+      "digest": "sha256:4cc28b9d4788081015740a29e2c2b29314fe397b97dcc3324bca81936519777b",
+      "updated_at": "2026-08-09T09:12:31Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.qt.x86_64.tar.xz"
+    },
+    {
+      "id": 507330064,
+      "name": "doublecmd-1.2.8.qt6.aarch64.tar.xz",
+      "state": "uploaded",
+      "size": 9416300,
+      "digest": "sha256:66e1a364fc3b435c73a0694d5daa82e068bcda272e823726db5f99805b299c4d",
+      "updated_at": "2026-08-09T09:12:20Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.qt6.aarch64.tar.xz"
+    },
+    {
+      "id": 507330109,
+      "name": "doublecmd-1.2.8.qt6.x86_64.tar.xz",
+      "state": "uploaded",
+      "size": 9975992,
+      "digest": "sha256:8570d4bdf753c31f04b48e249ae8c5e8cf105c59d7bebd901b5d1a5c03691eb5",
+      "updated_at": "2026-08-09T09:12:22Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.qt6.x86_64.tar.xz"
+    },
+    {
+      "id": 507330378,
+      "name": "doublecmd-1.2.8.x86_64-win64.exe",
+      "state": "uploaded",
+      "size": 10637065,
+      "digest": "sha256:975df890e20706185ae140f6b9e3ad63c53230a64dd9742339ef9bfbb5f52b81",
+      "updated_at": "2026-08-09T09:12:34Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.x86_64-win64.exe"
+    },
+    {
+      "id": 507330456,
+      "name": "doublecmd-1.2.8.x86_64-win64.msi",
+      "state": "uploaded",
+      "size": 17261292,
+      "digest": "sha256:6852e626b5489f50242aed70b59848dd3a798e140580d0a5d77b8745b656916f",
+      "updated_at": "2026-08-09T09:12:38Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.x86_64-win64.msi"
+    },
+    {
+      "id": 507330547,
+      "name": "doublecmd-1.2.8.x86_64-win64.zip",
+      "state": "uploaded",
+      "size": 16633962,
+      "digest": "sha256:45bdb86a58ff36361eff010bd41e4ed817128d63d826ef9692e63def3fcaccb0",
+      "updated_at": "2026-08-09T09:12:41Z",
+      "browser_download_url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.8/doublecmd-1.2.8.x86_64-win64.zip"
+    }
+  ]
+}

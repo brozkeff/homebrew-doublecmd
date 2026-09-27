@@ -1,0 +1,25 @@
+{
+  "version": "1.2.9",
+  "tag": "v1.2.9",
+  "release_url": "https://github.com/doublecmd/doublecmd/releases/tag/v1.2.9",
+  "assets": {
+    "arm": {
+      "id": 592614352,
+      "name": "doublecmd-1.2.9.cocoa.aarch64.dmg",
+      "url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.9/doublecmd-1.2.9.cocoa.aarch64.dmg",
+      "sha256": "6d615ae9d87fe60fed4efbb32fa83b5c21f2bfc007836f3f12e60e599d3447e8",
+      "updated_at": "2026-09-27T09:45:28Z",
+      "size": 16569146,
+      "digest": "sha256:6d615ae9d87fe60fed4efbb32fa83b5c21f2bfc007836f3f12e60e599d3447e8"
+    },
+    "intel": {
+      "id": 592614250,
+      "name": "doublecmd-1.2.9.cocoa.x86_64.dmg",
+      "url": "https://github.com/doublecmd/doublecmd/releases/download/v1.2.9/doublecmd-1.2.9.cocoa.x86_64.dmg",
+      "sha256": "5a60a5efa31b4438512aabf0213c2c307dd910b3a6661f70da4dfbcfa6730578",
+      "updated_at": "2026-09-27T09:45:27Z",
+      "size": 17361703,
+      "digest": "sha256:5a60a5efa31b4438512aabf0213c2c307dd910b3a6661f70da4dfbcfa6730578"
+    }
+  }
+}

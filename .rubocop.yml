@@ -1,0 +1,17 @@
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - test/fixtures/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - Casks/**/*
+Layout/LineLength:
+  Max: 140
+Metrics:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false

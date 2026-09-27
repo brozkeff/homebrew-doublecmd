@@ -1,0 +1,62 @@
+name: Publish releases
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths: [docs/**, .github/workflows/releases.yml]
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: master
+      - uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8 # v1.327.0
+        with:
+          ruby-version: '4.0'
+          bundler-cache: true
+      - name: Test offline
+        run: bundle exec ruby -Itest test/releases_test.rb
+      - name: Lint Ruby
+        run: bundle exec rubocop
+      - name: Discover and verify latest release
+        if: github.event_name != 'push'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: ruby scripts/releases.rb update
+      - name: Check Ruby syntax
+        run: ruby -c Casks/double-commander.rb
+      - name: Commit update
+        id: update
+        run: |
+          if ! git diff --quiet -- release.json Casks docs; then
+            version=$(ruby -rjson -e 'puts JSON.parse(File.read("release.json")).fetch("version")')
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add release.json Casks docs
+            git commit -m "chore: update double-commander to $version"
+            git push origin master
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+        if: steps.update.outputs.changed == 'true' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        if: steps.update.outputs.changed == 'true' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        with:
+          path: docs
+      - uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        id: deploy
+        if: steps.update.outputs.changed == 'true' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
