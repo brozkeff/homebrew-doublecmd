@@ -12,4 +12,4 @@ The first implementation added hosted test and macOS installation workflows. The
 
 Keep one weekly Ubuntu publishing workflow, pinned to exact stable Action SHAs. Run tests, RuboCop, and installation checks only on local machines. The release script itself validates downloaded bytes and fails closed. Keep the 1.2.8 fixtures and local preview commands. Remove hosted test, macOS smoke, and Dependabot workflows.
 
-Consequence: contributors and maintainers must run local checks before publishing code changes. Weekly publishing remains fast and has no macOS runner cost.
+Consequence: contributors and maintainers must run local checks before publishing code changes. Weekly publishing uses Ubuntu 24.04, remains fast, and has no macOS runner cost.
