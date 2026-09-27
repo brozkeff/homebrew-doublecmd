@@ -9,6 +9,8 @@ require 'optparse'
 require 'cgi'
 
 module Releases
+  class MissingAsset < StandardError; end
+
   ROOT = File.expand_path('..', __dir__)
   API = 'https://api.github.com/repos/doublecmd/doublecmd/releases'.freeze
   ARCHES = { 'arm' => /(?:^|[._-])(?:aarch64|arm64)(?:[._-]|$)/i,
@@ -61,7 +63,8 @@ module Releases
       candidates = release.fetch('assets').select do |a|
         a['state'] == 'uploaded' && a['name'].downcase.end_with?('.dmg') && a['name'].match?(pattern)
       end
-      raise "#{release['tag_name']}: expected one #{arch} DMG, found #{candidates.length}" unless candidates.length == 1
+      raise MissingAsset, "#{release['tag_name']}: no #{arch} DMG yet" if candidates.empty?
+      raise "#{release['tag_name']}: ambiguous #{arch} DMGs" if candidates.length > 1
 
       found[arch] = candidates.first
     end
@@ -221,7 +224,14 @@ module Releases
       release = latest(all)
       old_path = File.join(ROOT, 'release.json')
       old = File.exist?(old_path) ? JSON.parse(File.read(old_path)) : nil
-      selected = assets(release)
+      selected = nil
+      begin
+        selected = assets(release)
+      rescue MissingAsset => e
+        puts "Waiting for complete release: #{e.message}"
+      end
+      return unless selected
+
       if old
         comparison = version(release).split('.').map(&:to_i) <=> old.fetch('version').split('.').map(&:to_i)
         raise 'Refusing downgrade' if comparison.negative?

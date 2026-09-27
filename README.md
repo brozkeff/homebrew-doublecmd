@@ -57,7 +57,6 @@ bundle exec ruby -Itest test/releases_test.rb
 bundle exec rubocop
 ruby scripts/releases.rb list --limit 10
 ruby scripts/releases.rb render --tag v1.2.8 --output tmp/v1.2.8
-ruby scripts/verify_historical.rb
 ruby scripts/releases.rb render --last 10 --output tmp/releases
 ruby scripts/releases.rb update --check
 ruby scripts/releases.rb update
@@ -69,11 +68,11 @@ Production files are `release.json`, `Casks/double-commander.rb`, and `docs/inde
 
 ## Validation and publishing
 
-Offline tests compare generated 1.2.8 cask fields with the exact historical official cask after removal of `disable!`, including both original hashes. The added attribute-clearing hook is tested separately. Tests also cover discovery and rendering. A manually triggered Tests workflow can download both historical DMGs and compare the computed hashes.
+Local offline tests compare generated 1.2.8 cask fields with the exact historical official cask after removal of `disable!`, including both original hashes. The added attribute-clearing hook is tested separately. Tests also cover discovery and rendering. To verify real historical downloads locally, run the 1.2.8 render command above and compare its `release.json` hashes with the official fixture.
 
-The release workflow runs on Ubuntu, downloads binaries only for a changed candidate, and skips unchanged commits and scheduled deployments. Pages is deployed explicitly after automated commits because bot commits do not trigger another workflow. Enable GitHub Pages with **GitHub Actions** as its source and allow Pages deployment from `master`. The repo must permit Actions to write contents.
+The release workflow runs on Ubuntu, downloads binaries only for a changed candidate, and skips unchanged commits and scheduled deployments. Tests and RuboCop run **only locally**; GitHub Actions never launches test or macOS runner jobs. Pages is deployed explicitly after automated commits because bot commits do not trigger another workflow. Enable GitHub Pages with **GitHub Actions** as its source and allow Pages deployment from `master`. The repo must permit Actions to write contents.
 
-The manually dispatched macOS smoke workflow installs the app on disposable ARM and Intel runners. It verifies historical install, reinstall, upgrade, native architecture, a custom app directory, cleared attributes, and preservation of a settings marker. It does not launch the app or run on weekly refreshes. Use current Homebrew: the cask uses its declarative `postflight_steps` API.
+Installation smoke checks are local only. Use current Homebrew: the cask uses its declarative `postflight_steps` API. Local packaging checks can inspect cask parsing and audit both architecture branches without installing the app. Only manually install, reinstall, or upgrade on a machine where you intend to run Double Commander.
 
 Homebrew auditing skips only `sha256_no_check_if_unversioned`: that check treats literal URLs as unversioned even when they point to a fixed release asset. We retain explicit discovered URLs and mandatory hashes rather than replacing them with filename templates or `:no_check`.
 

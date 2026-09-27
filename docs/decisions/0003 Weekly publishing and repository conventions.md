@@ -1,5 +1,5 @@
 ---
-status: Accepted
+status: Superseded: by 0007 Local-only testing and lean publishing.md
 date: 2026-09-27
 ---
 # Weekly publishing and repository conventions

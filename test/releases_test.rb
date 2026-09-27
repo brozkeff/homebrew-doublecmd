@@ -99,9 +99,16 @@ class ReleasesTest < Minitest::Test
 
   def test_missing_and_ambiguous_assets
     @release['assets'] = []
-    assert_raises(RuntimeError) { Releases.assets(@release) }
+    assert_raises(Releases::MissingAsset) { Releases.assets(@release) }
     @release['assets'] = [{ 'name' => 'a.arm64.dmg', 'state' => 'uploaded' }] * 2
     assert_raises(RuntimeError) { Releases.assets(@release) }
+  end
+
+  def test_incomplete_latest_waits_without_writing
+    incomplete = published_release.merge('tag_name' => 'v99.0.0', 'assets' => [])
+    Releases.stub(:all, [incomplete]) do
+      assert_output(/Waiting for complete release/) { Releases.run(['update']) }
+    end
   end
 
   def test_pagination
