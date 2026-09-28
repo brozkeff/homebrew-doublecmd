@@ -100,6 +100,10 @@ Installation smoke checks are local only. Use current Homebrew: the cask uses it
 
 Homebrew auditing skips only `sha256_no_check_if_unversioned`: that check treats literal URLs as unversioned even when they point to a fixed release asset. We retain explicit discovered URLs and mandatory hashes rather than replacing them with filename templates or `:no_check`.
 
+### Channel switch smoke test (2026-09-28)
+
+The [manually dispatched release workflow](https://github.com/brozkeff/homebrew-doublecmd/actions/runs/36472380035) completed successfully. On an Apple Silicon Mac, Homebrew upgraded the existing stable cask from 1.2.9 to snapshot revision 13524 (Double Commander 1.3.0). The user launched the snapshot and reported that it worked fine. With the stable channel selected again, Homebrew downgraded the same cask from revision 13524 to 1.2.9; both `brew list --cask --versions` and the installed app's `Info.plist` reported 1.2.9. Intel installation was not tested on this Mac.
+
 ## Licenses
 
 Original build/update scripts are **EUPL-1.2**; see [LICENSE](LICENSE). The installed Double Commander software is independently licensed under **GNU GPL version 2**; see [upstream license](https://github.com/doublecmd/doublecmd/blob/master/LICENSE.md). Inherited Homebrew cask material retains its BSD-2-Clause notices. See [NOTICE](NOTICE) for provenance. Installing upstream GPL software does not relicense this repository's scripts.
