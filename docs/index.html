@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Double Commander for macOS</title><style>body{font:18px system-ui;max-width:850px;margin:3rem auto;padding:0 1rem;line-height:1.6}pre{overflow:auto;background:#eee;padding:1rem}code{overflow-wrap:anywhere}li{margin-bottom:1rem}</style></head><body>
-<h1>Double Commander for macOS</h1><p>Unofficial Homebrew tap. Tracked release: <a href="https://github.com/doublecmd/doublecmd/releases/tag/v1.2.9">1.2.9</a>. macOS 11 or newer.</p>
+<h1>Double Commander for macOS</h1><p>Unofficial Homebrew tap. Tracked stable release: <a href="https://github.com/doublecmd/doublecmd/releases/tag/v1.2.9">1.2.9</a>. macOS 11 or newer.</p>
+<p>Snapshot channel: <a href="https://github.com/doublecmd/snapshots/releases/tag/13524">revision 13524</a>. Opt in by setting <code>HOMEBREW_DOUBLE_COMMANDER_CHANNEL=snapshot</code> in your shell environment. Run <code>brew update</code> and <code>brew upgrade --cask brozkeff/doublecmd/double-commander</code>. Remove the setting and upgrade again to return to the latest stable release, even when it is a downgrade.</p><h2>Snapshot downloads</h2><ul><li><a href="https://github.com/doublecmd/snapshots/releases/download/13524/doublecmd-1.3.0-13524.cocoa.aarch64.dmg">Apple Silicon</a><br>SHA-256: <code>10be7c72abb4051c0cd6c4b7a3b9c4305ab49c4e9652d73dcfa6f4dd33676a0c</code></li>
+<li><a href="https://github.com/doublecmd/snapshots/releases/download/13524/doublecmd-1.3.0-13524.cocoa.x86_64.dmg">Intel x86_64</a><br>SHA-256: <code>db7e6ca754c0c8154f603dd8be9f1ca7f66b5775e30e27d2b0b37974ea75a20b</code></li></ul>
 <pre>brew tap brozkeff/doublecmd
 brew trust --cask brozkeff/doublecmd/double-commander
 brew install --cask brozkeff/doublecmd/double-commander
 # Later:
 brew update
 brew upgrade --cask brozkeff/doublecmd/double-commander</pre>
-<h2>Direct upstream downloads</h2><ul><li><a href="https://github.com/doublecmd/doublecmd/releases/download/v1.2.9/doublecmd-1.2.9.cocoa.aarch64.dmg">Apple Silicon</a><br>SHA-256: <code>6d615ae9d87fe60fed4efbb32fa83b5c21f2bfc007836f3f12e60e599d3447e8</code></li>
+<h2>Stable downloads</h2><ul><li><a href="https://github.com/doublecmd/doublecmd/releases/download/v1.2.9/doublecmd-1.2.9.cocoa.aarch64.dmg">Apple Silicon</a><br>SHA-256: <code>6d615ae9d87fe60fed4efbb32fa83b5c21f2bfc007836f3f12e60e599d3447e8</code></li>
 <li><a href="https://github.com/doublecmd/doublecmd/releases/download/v1.2.9/doublecmd-1.2.9.cocoa.x86_64.dmg">Intel x86_64</a><br>SHA-256: <code>5a60a5efa31b4438512aabf0213c2c307dd910b3a6661f70da4dfbcfa6730578</code></li></ul>
 <p>The tap clears all extended attributes after each installation or upgrade. For manual installations, before first launch run:</p><pre>xattr -cr "/Applications/Double Commander.app/"</pre>
 <h2>Why this tap exists</h2><p>The official cask was disabled for failing Gatekeeper checks. This tap offers an explicit sideloading path and checks SHA-256 hashes, without notarization or PGP signature verification.</p>

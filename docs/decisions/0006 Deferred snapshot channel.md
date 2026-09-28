@@ -1,8 +1,10 @@
 ---
-status: Accepted
+status: 'Superseded: by 0009 Single cask release channels.md'
 date: 2026-09-27
 ---
 # Deferred snapshot channel
+
+Superseded by [0009 Single cask release channels](0009%20Single%20cask%20release%20channels.md).
 
 ## Context and Problem Statement
 

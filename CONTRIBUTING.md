@@ -6,6 +6,6 @@ Run `bundle install`, `bundle exec ruby -Itest test/releases_test.rb`, and `bund
 
 The repository's Actions policy allows only the pinned SHAs in the publishing workflow and the `actions/upload-artifact` SHA used by `upload-pages-artifact`. Update the repository's selected-Actions allowlist whenever those pins change; retain mandatory SHA pinning.
 
-Keep the pipeline small: Ruby standard libraries, one Ubuntu publishing job, no daily downloads or macOS installation on scheduled refreshes. Do not weaken hashes to `:no_check`, select the first ambiguous asset, enable unsigned snapshot installs in the stable cask, or silently accept replaced release assets.
+Keep the pipeline small: Ruby standard libraries, one Ubuntu publishing job, no daily downloads or macOS installation on scheduled refreshes. Do not weaken hashes to `:no_check`, select the first ambiguous asset, select snapshots without explicit opt-in, or silently accept replaced release assets.
 
 Report tap packaging and updater problems here; report application behavior to upstream Double Commander. For security concerns, avoid posting tokens or private logs in public issues.
