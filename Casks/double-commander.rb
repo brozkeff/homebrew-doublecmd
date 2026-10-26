@@ -20,15 +20,15 @@ cask "double-commander" do
 
     end
   when "snapshot"
-    version "13576"
-    sha256 arm:   "c4e0bda75d4910f3b3616c9076d5208d18d584b8106be4c6f09ca07694ac9a15",
-           intel: "19bfc72b5a32ec7046e599d50af63771f5e96531ad12251d5bf0bbc3f3b72a67"
+    version "13601"
+    sha256 arm:   "f5a05fbfcdd2d157523f2be273246dd1f927bc3860815db36fbd2aca2502f17b",
+           intel: "dc9bbf976a49114c98196a4fff114b9f28bb4e0d274cd71f1f825e3d37005617"
 
     on_arm do
-      url "https://github.com/doublecmd/snapshots/releases/download/13576/doublecmd-1.3.0-13576.cocoa.aarch64.dmg"
+      url "https://github.com/doublecmd/snapshots/releases/download/13601/doublecmd-1.3.0-13601.cocoa.aarch64.dmg"
     end
     on_intel do
-      url "https://github.com/doublecmd/snapshots/releases/download/13576/doublecmd-1.3.0-13576.cocoa.x86_64.dmg"
+      url "https://github.com/doublecmd/snapshots/releases/download/13601/doublecmd-1.3.0-13601.cocoa.x86_64.dmg"
     end
 
     livecheck do
