@@ -3,15 +3,15 @@
 cask "double-commander" do
   case ENV.fetch("HOMEBREW_DOUBLE_COMMANDER_CHANNEL", "stable")
   when "stable"
-    version "1.2.9"
-    sha256 arm:   "6d615ae9d87fe60fed4efbb32fa83b5c21f2bfc007836f3f12e60e599d3447e8",
-           intel: "5a60a5efa31b4438512aabf0213c2c307dd910b3a6661f70da4dfbcfa6730578"
+    version "1.2.10"
+    sha256 arm:   "890bf553059d82150b185c0cb7a71ba0de55350d66a0329d941acafb21452470",
+           intel: "58ff7ed995bed778599bb242aa0f6a922262b1f6269521a4492329557de8f967"
 
     on_arm do
-      url "https://github.com/doublecmd/doublecmd/releases/download/v1.2.9/doublecmd-1.2.9.cocoa.aarch64.dmg"
+      url "https://github.com/doublecmd/doublecmd/releases/download/v1.2.10/doublecmd-1.2.10.cocoa.aarch64.dmg"
     end
     on_intel do
-      url "https://github.com/doublecmd/doublecmd/releases/download/v1.2.9/doublecmd-1.2.9.cocoa.x86_64.dmg"
+      url "https://github.com/doublecmd/doublecmd/releases/download/v1.2.10/doublecmd-1.2.10.cocoa.x86_64.dmg"
     end
 
     livecheck do
@@ -20,15 +20,15 @@ cask "double-commander" do
 
     end
   when "snapshot"
-    version "13601"
-    sha256 arm:   "f5a05fbfcdd2d157523f2be273246dd1f927bc3860815db36fbd2aca2502f17b",
-           intel: "dc9bbf976a49114c98196a4fff114b9f28bb4e0d274cd71f1f825e3d37005617"
+    version "13625"
+    sha256 arm:   "383c481e392116737304d1eb0e7483cc384760127aa1b10ded63afa48ac73ee3",
+           intel: "37a027a1d8fa1caf72bfa2a58c0df0037070725885f3fe408843c2dbb8b7e8ee"
 
     on_arm do
-      url "https://github.com/doublecmd/snapshots/releases/download/13601/doublecmd-1.3.0-13601.cocoa.aarch64.dmg"
+      url "https://github.com/doublecmd/snapshots/releases/download/13625/doublecmd-1.3.0-13625.cocoa.aarch64.dmg"
     end
     on_intel do
-      url "https://github.com/doublecmd/snapshots/releases/download/13601/doublecmd-1.3.0-13601.cocoa.x86_64.dmg"
+      url "https://github.com/doublecmd/snapshots/releases/download/13625/doublecmd-1.3.0-13625.cocoa.x86_64.dmg"
     end
 
     livecheck do

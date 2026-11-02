@@ -1,25 +1,25 @@
 {
-  "version": "13601",
-  "tag": "13601",
-  "release_url": "https://github.com/doublecmd/snapshots/releases/tag/13601",
+  "version": "13625",
+  "tag": "13625",
+  "release_url": "https://github.com/doublecmd/snapshots/releases/tag/13625",
   "assets": {
     "arm": {
-      "id": 675051050,
-      "name": "doublecmd-1.3.0-13601.cocoa.aarch64.dmg",
-      "url": "https://github.com/doublecmd/snapshots/releases/download/13601/doublecmd-1.3.0-13601.cocoa.aarch64.dmg",
-      "sha256": "f5a05fbfcdd2d157523f2be273246dd1f927bc3860815db36fbd2aca2502f17b",
-      "updated_at": "2026-10-25T12:57:10Z",
-      "size": 18281178,
-      "digest": "sha256:f5a05fbfcdd2d157523f2be273246dd1f927bc3860815db36fbd2aca2502f17b"
+      "id": 699438562,
+      "name": "doublecmd-1.3.0-13625.cocoa.aarch64.dmg",
+      "url": "https://github.com/doublecmd/snapshots/releases/download/13625/doublecmd-1.3.0-13625.cocoa.aarch64.dmg",
+      "sha256": "383c481e392116737304d1eb0e7483cc384760127aa1b10ded63afa48ac73ee3",
+      "updated_at": "2026-11-01T20:27:04Z",
+      "size": 18285263,
+      "digest": "sha256:383c481e392116737304d1eb0e7483cc384760127aa1b10ded63afa48ac73ee3"
     },
     "intel": {
-      "id": 675051002,
-      "name": "doublecmd-1.3.0-13601.cocoa.x86_64.dmg",
-      "url": "https://github.com/doublecmd/snapshots/releases/download/13601/doublecmd-1.3.0-13601.cocoa.x86_64.dmg",
-      "sha256": "dc9bbf976a49114c98196a4fff114b9f28bb4e0d274cd71f1f825e3d37005617",
-      "updated_at": "2026-10-25T12:57:08Z",
-      "size": 19037307,
-      "digest": "sha256:dc9bbf976a49114c98196a4fff114b9f28bb4e0d274cd71f1f825e3d37005617"
+      "id": 699438506,
+      "name": "doublecmd-1.3.0-13625.cocoa.x86_64.dmg",
+      "url": "https://github.com/doublecmd/snapshots/releases/download/13625/doublecmd-1.3.0-13625.cocoa.x86_64.dmg",
+      "sha256": "37a027a1d8fa1caf72bfa2a58c0df0037070725885f3fe408843c2dbb8b7e8ee",
+      "updated_at": "2026-11-01T20:27:02Z",
+      "size": 19041935,
+      "digest": "sha256:37a027a1d8fa1caf72bfa2a58c0df0037070725885f3fe408843c2dbb8b7e8ee"
     }
   }
 }
